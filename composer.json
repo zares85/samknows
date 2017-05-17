@@ -1,0 +1,15 @@
+{
+    "name": "zares85/samknows",
+    "description": "Backend test for SamKnows",
+    "authors": [
+        {
+            "name": "Carlos Jurado",
+            "email": "carlos.jurado@kineo.com"
+        }
+    ],
+    "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "require": {}
+}
