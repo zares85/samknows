@@ -24,7 +24,7 @@ class AggregateCommand extends ContainerCommand {
             ->setDescription('Install tables into database.')
             ->addArgument('unit', InputArgument::REQUIRED, 'Unit id')
             ->addArgument('metric', InputArgument::REQUIRED, 'download, upload, latency, packet_loss')
-            ->addArgument('hour', InputArgument::OPTIONAL, '1 to 23')
+            ->addArgument('hour', InputArgument::OPTIONAL, '0 to 23')
         ;
     }
 

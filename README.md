@@ -11,3 +11,6 @@ Run the following command to install the tables in your database
 
 Run the following command to import the metrics into database
 `bin/console import http://tech-test.sandbox.samknows.com/php-2.0/testdata.json`
+
+You can now aggregate results running the following command
+`bin/console aggregate <unit> <metric> [<hour>]`
