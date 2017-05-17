@@ -1,6 +1,6 @@
 <?php
 /**
- * Metric.php
+ * Aggregation.php
  *
  * @package
  * @author    Carlos Jurado <carlos.jurado@kineo.com>
@@ -8,10 +8,10 @@
  * @license   http://www.kineo.com
  */
 
-namespace Samknows\Metric;
+namespace Samknows\Aggregation;
 
 
-interface Metric {
+interface Aggregation {
 
     /**
      * @return int
@@ -19,12 +19,7 @@ interface Metric {
     public function unitId();
 
     /**
-     * @return \DateTime
+     * @return int between 0 and 23
      */
-    public function timestamp();
-
-    /**
-     * @return int
-     */
-    public function value();
+    public function hour();
 }

@@ -11,7 +11,9 @@
 namespace Samknows\Repository;
 
 
+use Samknows\Aggregation\Aggregation;
 use Samknows\Metric\Metric;
+use Samknows\Result\Result;
 
 interface MetricRepository {
 
@@ -34,4 +36,10 @@ interface MetricRepository {
      * @param Metric[] $metrics
      */
     public function savePacketLoss(array $metrics);
+
+    /**
+     * @param Aggregation $aggregation
+     * @return Result
+     */
+    public function aggregate(Aggregation $aggregation);
 }
