@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+/**
+ * samknows.php
+ *
+ * @package
+ * @author    Carlos Jurado <carlos.jurado@kineo.com>
+ * @copyright 2017 City and Guilds Kineo
+ * @license   http://www.kineo.com
+ */
+
+$container = require(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'container.php');
+
+use Symfony\Component\Console\Application;
+
+$application = new Application('Samknows');
+
+$application->add(new \Samknows\Command\InstallCommand($container));
+
+$application->run();

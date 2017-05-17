@@ -12,7 +12,12 @@
         "phpunit/phpunit": "~4.0",
         "mockery/mockery": "~0.9"
     },
-    "require": {},
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/database": "~5.0",
+        "symfony/console": "~3.2",
+        "pimple/pimple": "~3.0"
+    },
     "autoload": {
         "psr-4": {
             "Samknows\\": "src/Samknows",

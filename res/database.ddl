@@ -6,7 +6,7 @@ CREATE TABLE metric (
   download INT,
   upload INT,
   latency INT,
-  packet_loss INT
+  packet_loss FLOAT
 );
 
 CREATE UNIQUE INDEX metric_idx ON metric (
