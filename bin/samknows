@@ -17,5 +17,6 @@ $application = new Application('Samknows');
 
 $application->add(new \Samknows\Command\InstallCommand($container));
 $application->add(new \Samknows\Command\ImportCommand($container));
+$application->add(new \Samknows\Command\AggregateCommand($container));
 
 $application->run();
