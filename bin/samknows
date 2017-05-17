@@ -16,5 +16,6 @@ use Symfony\Component\Console\Application;
 $application = new Application('Samknows');
 
 $application->add(new \Samknows\Command\InstallCommand($container));
+$application->add(new \Samknows\Command\ImportCommand($container));
 
 $application->run();

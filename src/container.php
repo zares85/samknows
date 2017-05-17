@@ -18,5 +18,8 @@ $container['config.database.json'] = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'c
 $capsule = new Illuminate\Database\Capsule\Manager();
 $capsule->addConnection(json_decode(file_get_contents($container['config.database.json']), true));
 $container['db'] = $capsule->getConnection();
+$container['MetricTypes'] = ['download', 'upload', 'latency', 'packet_loss'];
+$container['MetricArrayFactory'] = new \Samknows\Metric\MetricArrayFactory;
+$container['MetricRepository'] = new \Samknows\Repository\IlluminateMetricRepository($container['db']);
 
 return $container;
