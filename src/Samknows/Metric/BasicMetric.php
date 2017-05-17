@@ -23,7 +23,7 @@ class BasicMetric implements Metric {
     protected $timestamp;
 
     /**
-     * @var int
+     * @var float
      */
     protected $value;
 
@@ -32,7 +32,7 @@ class BasicMetric implements Metric {
      *
      * @param int $unitId
      * @param \DateTime $timestamp
-     * @param int $value
+     * @param float $value
      */
     public function __construct($unitId, \DateTime $timestamp, $value) {
         $this->unitId = $unitId;
@@ -55,7 +55,7 @@ class BasicMetric implements Metric {
     }
 
     /**
-     * @return int
+     * @return float
      */
     public function value() {
         return $this->value;

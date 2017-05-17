@@ -24,7 +24,7 @@ interface Metric {
     public function timestamp();
 
     /**
-     * @return int
+     * @return float
      */
     public function value();
 }
