@@ -18,10 +18,12 @@ class BasicAggregationTest extends TestCase {
     public function testCreate() {
         $unitId = 2;
         $hour = 12;
+        $metric = 'download';
 
-        $aggregation = new BasicAggregation($unitId, $hour);
+        $aggregation = new BasicAggregation($unitId, $hour, $metric);
 
         $this->assertEquals($unitId, $aggregation->unitId());
         $this->assertEquals($hour, $aggregation->hour());
+        $this->assertEquals($metric, $aggregation->metric());
     }
 }

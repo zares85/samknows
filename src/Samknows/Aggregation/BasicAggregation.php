@@ -23,14 +23,20 @@ class BasicAggregation implements Aggregation {
     protected $hour;
 
     /**
+     * @var string
+     */
+    protected $metric;
+
+    /**
      * BasicAggregation constructor.
      *
      * @param int $unitId
      * @param $hour
      */
-    public function __construct($unitId, $hour) {
+    public function __construct($unitId, $hour, $metric) {
         $this->unitId = $unitId;
         $this->hour = $hour;
+        $this->metric = $metric;
     }
 
     /**
@@ -45,5 +51,12 @@ class BasicAggregation implements Aggregation {
      */
     public function hour() {
         return $this->hour;
+    }
+
+    /**
+     * @return string download, upload, latency or packet_loss
+     */
+    public function metric() {
+        return $this->metric;
     }
 }

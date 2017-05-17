@@ -22,4 +22,9 @@ interface Aggregation {
      * @return int between 0 and 23
      */
     public function hour();
+
+    /**
+     * @return string download, upload, latency or packet_loss
+     */
+    public function metric();
 }
