@@ -1,6 +1,6 @@
 {
     "driver": "mysql",
-    "host": "locahost",
+    "host": "localhost",
     "database": "samknows",
     "username": "username",
     "password": "password",
