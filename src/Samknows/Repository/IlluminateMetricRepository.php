@@ -13,6 +13,7 @@ namespace Samknows\Repository;
 use Illuminate\Database\ConnectionInterface;
 use Samknows\Aggregation\Aggregation;
 use Samknows\Metric\Metric;
+use Samknows\Result\BasicResult;
 use Samknows\Result\Result;
 
 class IlluminateMetricRepository implements MetricRepository {
@@ -35,18 +36,16 @@ class IlluminateMetricRepository implements MetricRepository {
      * Convert Metrics into a arrays ready to be inserted into database.
      *
      * @param Metric[] $metrics
-     * @param string $type
      * @return array
      */
-    protected function getInsertValues($metrics, $type = 'int') {
+    protected function getInsertValues($metrics) {
         $values = [];
 
         foreach ($metrics as $metric) {
-            $value = $metric->value();
             $values[] = [
                 'unit_id' => $metric->unitId(),
                 'ts'      => $metric->timestamp(),
-                'value'   => settype($value, $type),
+                'value'   => $metric->value(),
             ];
         }
 
@@ -78,7 +77,7 @@ class IlluminateMetricRepository implements MetricRepository {
      * @param Metric[] $metrics
      */
     public function savePacketLoss(array $metrics) {
-        $this->db->table('packet_loss')->insert($this->getInsertValues($metrics, 'float'));
+        $this->db->table('packet_loss')->insert($this->getInsertValues($metrics));
     }
 
     /**

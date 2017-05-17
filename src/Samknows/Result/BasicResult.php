@@ -40,6 +40,11 @@ class BasicResult implements Result {
     protected $median;
 
     /**
+     * @var float
+     */
+    protected $count;
+
+    /**
      * BasicResult constructor.
      *
      * @param Aggregation $aggregation
@@ -47,13 +52,15 @@ class BasicResult implements Result {
      * @param float $minimum
      * @param float $maximum
      * @param float $median
+     * @param int $count
      */
-    public function __construct(Aggregation $aggregation, $mean, $minimum, $maximum, $median) {
+    public function __construct(Aggregation $aggregation, $mean, $minimum, $maximum, $median, $count) {
         $this->aggregation = $aggregation;
         $this->mean = $mean;
         $this->minimum = $minimum;
         $this->maximum = $maximum;
         $this->median = $median;
+        $this->count = $count;
     }
 
     /**
@@ -89,5 +96,12 @@ class BasicResult implements Result {
      */
     public function median() {
         return $this->median;
+    }
+
+    /**
+     * @return int
+     */
+    public function count() {
+        return $this->count;
     }
 }

@@ -22,6 +22,7 @@ class BasicResultTest extends TestCase {
         $minimum = 12;
         $maximum = 55;
         $median = 30;
+        $count = 1500;
 
         $result = new BasicResult($aggregation, $mean, $minimum, $maximum, $median);
 

@@ -39,4 +39,9 @@ interface Result {
      * @return float
      */
     public function median();
+
+    /**
+     * @return float
+     */
+    public function count();
 }
