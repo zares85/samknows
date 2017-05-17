@@ -6,43 +6,43 @@ DROP TABLE IF EXISTS packet_loss;
 CREATE TABLE download (
   unit_id INT NOT NULL,
   ts TIMESTAMP NOT NULL,
-  value INT,
+  value INT
 );
 
 CREATE TABLE upload (
   unit_id INT NOT NULL,
   ts TIMESTAMP NOT NULL,
-  value INT,
+  value INT
 );
 
 CREATE TABLE latency (
   unit_id INT NOT NULL,
   ts TIMESTAMP NOT NULL,
-  value INT,
+  value INT
 );
 
 CREATE TABLE packet_loss (
   unit_id INT NOT NULL,
   ts TIMESTAMP NOT NULL,
-  value FLOAT,
+  value FLOAT
 );
 
-CREATE UNIQUE INDEX download_idx ON metric (
+CREATE UNIQUE INDEX download_idx ON download (
   unit_id,
   ts
 );
 
-CREATE UNIQUE INDEX upload_idx ON metric (
+CREATE UNIQUE INDEX upload_idx ON upload (
   unit_id,
   ts
 );
 
-CREATE UNIQUE INDEX latency_idx ON metric (
+CREATE UNIQUE INDEX latency_idx ON latency (
   unit_id,
   ts
 );
 
-CREATE UNIQUE INDEX packet_loss_idx ON metric (
+CREATE UNIQUE INDEX packet_loss_idx ON packet_loss (
   unit_id,
   ts
 );
