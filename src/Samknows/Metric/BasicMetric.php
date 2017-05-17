@@ -13,23 +13,51 @@ namespace Samknows\Metric;
 class BasicMetric implements Metric {
 
     /**
+     * @var int
+     */
+    protected $unitId;
+
+    /**
+     * @var \DateTime
+     */
+    protected $timestamp;
+
+    /**
+     * @var int
+     */
+    protected $value;
+
+    /**
+     * BasicMetric constructor.
+     *
+     * @param int $unitId
+     * @param \DateTime $timestamp
+     * @param int $value
+     */
+    public function __construct($unitId, \DateTime $timestamp, $value) {
+        $this->unitId = $unitId;
+        $this->timestamp = $timestamp;
+        $this->value = $value;
+    }
+
+    /**
      * @return int
      */
     public function unitId() {
-        // TODO: Implement unitId() method.
+        return $this->unitId;
     }
 
     /**
      * @return \DateTime
      */
     public function timestamp() {
-        // TODO: Implement timestamp() method.
+        return $this->timestamp;
     }
 
     /**
      * @return int
      */
     public function value() {
-        // TODO: Implement value() method.
+        return $this->value;
     }
 }
