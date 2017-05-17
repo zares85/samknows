@@ -11,13 +11,27 @@
 namespace Samknows\Repository;
 
 
+use Samknows\Metric\Metric;
+
 interface MetricRepository {
 
-    public function saveDownload();
+    /**
+     * @param Metric[] $metrics
+     */
+    public function saveDownload(array $metrics);
 
-    public function saveUpload();
+    /**
+     * @param Metric[] $metrics
+     */
+    public function saveUpload(array $metrics);
 
-    public function saveLatency();
+    /**
+     * @param Metric[] $metrics
+     */
+    public function saveLatency(array $metrics);
 
-    public function savePacketLoss();
+    /**
+     * @param Metric[] $metrics
+     */
+    public function savePacketLoss(array $metrics);
 }
