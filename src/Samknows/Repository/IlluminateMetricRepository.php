@@ -119,12 +119,17 @@ class IlluminateMetricRepository implements MetricRepository {
     protected function mean(Builder $builder) {
         $count = $builder->count();
 
-        if ($count % 2) {
-            $limit = ($count - 1) / 2;
-            return $builder->limit("{$limit}, 1")->value('value');
+        if ($count == 0) {
+            return null;
+        } elseif ($count % 2) {
+            $offsset = ($count - 1) / 2;
+
+            return $builder->orderBy('value')->offset($offsset)->limit(1)->value('value');
         } else {
-            $limit = ($count / 2) - 1;
-            return $builder->limit("{$limit}, 2")->value('value') / 2;
+            $offsset = ($count / 2) - 1;
+            $records = $builder->orderBy('value')->offset($offsset)->limit(2)->get(['value']);
+
+            return (reset($records)->value + end($records)->value) / 2;
         }
     }
 }
